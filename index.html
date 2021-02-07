@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Maratona Discover</title>
+    <link rel="stylesheet" href="css/index.css">
+    <link href="https://fonts.gstatic.com" rel="preconnect">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,400;0,700;1,100;1,400;1,700&display=swap" rel="stylesheet">
+  </head>
+
+  <body>
+    <!--* Cabeçalho -->
+    <header>
+      <div class="header-container">
+        <img src="./assets/logo.svg" alt="Logo dev.finance$">
+      </div>
+    </header>
+
+    <main>
+      <div class="content-container">
+        <div class="block-container">
+          <h2 class="sr-only">Balanço</h2>
+
+          <div class="content-block">
+            <!-- Block Header -->
+            <div class="content-block-header">
+              <h4>Entradas</h4>
+
+              <img src="./assets/income.svg" alt="Imagem das Entradas">
+            </div>
+
+            <p id="incomeDisplay"></p>
+          </div>
+
+          <div class="content-block">
+            <!-- Block Header -->
+            <div class="content-block-header">
+              <h4>Saídas</h4>
+
+              <img src="./assets/expense.svg" alt="Imagem das Saídas">
+            </div>
+
+            <p id="expenseDisplay"></p>
+          </div>
+
+          <div class="content-block-total">
+            <!-- Block Header -->
+            <div class="content-block-header">
+              <h4>Total</h4>
+
+              <img src="./assets/total.svg" alt="Imagem do Total">
+            </div>
+
+            <p id="totalDisplay"></p>
+          </div>
+        </div>
+
+        <div class="block-container">
+          <h2 class="sr-only">Transações</h2>
+
+          <div class="button-new">
+            <a href="#" onclick="Modal.open()">+ Nova Transação</a>
+          </div>
+
+          <div class="table">
+            <table>
+              <thead>
+                <tr>
+                  <th>Description</th>
+                  <th>Amount</th>
+                  <th>Date</th>
+                  <th></th>
+                </tr>
+              </thead>
+  
+              <tbody id="data-table">
+                <!--* Conteúdo via JS -->
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </main>
+
+    <!--* Modal -->
+    <div class="overlay-container">
+      <div class="modal">
+        <div class="modal-content">
+          <div class="form">
+            <!-- Título -->
+            <h1>Nova Transação</h1>
+            <!-- Formulário -->
+            <form action="" onsubmit="Form.submit(event)">
+              <!-- Conteúdo -->
+              <div class="form-content">
+                <div class="form-content-field">
+                  <label for="description">Descrição</label>
+                  <input type="text" name="description" id="description" placeholder="Pagamento de divída">
+                </div>
+
+                <div class="form-content-field">
+                  <label for="amount">Quantidade</label>
+                  <input type="number" name="amount" step="0.01" id="amount" placeholder="0,00">
+                </div>
+                <!-- Texto -->
+                <small> Use o sinal - (negativo) para despesas e , (vírgula) para casas decimais</small>
+
+                <div class="form-content-field">
+                  <label for="date">Data</label>
+                  <input type="date" name="date" id="date">
+                </div>
+
+                <div class="form-buttons-container">
+                  <button type="button" onclick="Modal.close()">Cancelar</button>
+                  <button type="submit">Salvar</button>
+                </div>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <footer>
+      <span>@2021 - dev.finance$</span>
+    </footer>
+
+    <!--* JS -->
+    <!-- Modal -->
+    <script src="./js/modal.js"></script>
+    <!-- Modal -->
+    <script src="./js/transactions.js"></script>
+  </body>
+</html>

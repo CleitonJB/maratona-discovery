@@ -1,0 +1,379 @@
+* {
+  margin: 0;
+  padding: 0;
+
+  box-sizing: border-box;
+}
+
+:root {
+  --header-background: #2D4A22;
+
+  --text-default-color: #969CB3;
+  --text-negative-value: #e92929;
+  --text-positive-value: #12A454;
+}
+
+html {
+  font-size: 93.75%;
+}
+
+body {
+  background: #f0f2f5;
+
+  font-family: 'Poppins', 'sans-serif';
+}
+
+/* ------------ Header ------------ */
+
+.header-container {
+  width: 100%;
+  height: 33vh;
+
+  text-align: center;
+
+  padding: 2rem 0;
+
+  background: var(--header-background);
+}
+
+.header-container > h1 {
+  color: white;
+
+  font-weight: 100;
+}
+
+/* ------------ Content ------------ */
+
+.content-container {
+  position: relative;
+  bottom: 120px;
+  margin: 0 auto;
+
+  width: min(90vw, 950px);
+}
+
+.block-container > h2 {
+  color: white;
+
+  padding-bottom: 1rem;
+
+  font-weight: 400;
+}
+
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+
+  border-width: 0;
+  border: 1px solid red;
+}
+
+.content-block, .content-block-total {
+  width: 100%;
+  
+  padding: 1.75rem;
+  margin-bottom: 2rem;
+
+  border-radius: 0.25rem;
+
+  background: white;
+}
+
+.content-block > .content-block-header h4, .content-block > .content-block-header h4 {
+  padding-bottom: 1.2rem;
+
+  color: var(--text-default-color);
+
+  font-weight: 450;
+  font-size: 1rem;
+}
+
+.content-block-header {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+
+  width: 100%;
+}
+
+.content-block p, .content-block-total p {
+  font-size: 2rem;
+  font-weight: normal;
+}
+
+.content-block p {
+  color: rgba(32, 32, 32, 0.55);
+}
+
+.content-block-total p {
+  color: rgba(255, 255, 255, 0.85);
+}
+
+.content-block-total {
+  background: #49AA26;
+  color: white;
+}
+
+.block-container + .block-container > h2 {
+  color: var(--text-default-color);
+}
+
+/* ------------ Botão - Nova Transação ------------ */
+
+.button-new {
+  text-align: center;
+
+  padding: 0.5rem;
+  margin-bottom: 1rem;
+  border-radius: 0.25rem;
+
+  width: fit-content;
+}
+
+.button-new a {
+  opacity: 0.7;
+  transition: opacity 0.7s;
+
+  font-size: 1rem;
+  white-space: nowrap;
+  text-decoration: none;
+
+  color: var(--text-positive-value);
+}
+
+.button-new a:hover {
+  opacity: 1;
+  transition: opacity 0.7s;
+}
+
+/* ------------ Tabela ------------ */
+
+/*? Container */
+
+.table {
+  overflow: scroll;
+}
+
+.table::-webkit-scrollbar {
+  max-height: 7px;
+  max-width: 10px;
+}
+
+.table::-webkit-scrollbar-thumb {
+  background: var(--text-default-color);
+
+  border-radius: 1rem;
+}
+
+.table::-webkit-scrollbar-corner {
+  background: transparent;
+}
+
+/*? Main */
+
+table {
+  width: 100%;
+
+  border-spacing: 0 0.5rem;
+
+
+  color: var(--text-default-color);
+}
+
+th, td {
+  width: 33.33%;
+
+  white-space: nowrap;
+
+  padding: 1rem;
+  border-radius: 0.25rem;
+
+  background: rgb(255, 255, 255);
+}
+
+tbody tr {
+  font-weight: 500;
+
+  opacity: 0.65;
+}
+
+tbody tr:hover {
+  opacity: 1;
+}
+
+td {
+  text-align: center;
+}
+
+td:nth-child(2) {
+  text-align: left;
+
+  padding-left: 5.7rem;
+}
+
+td.negative-value {
+  color: var(--text-negative-value);
+}
+
+td.positive-value {
+  color: var(--text-positive-value);
+}
+
+/* ------------ Overlay & Modal ------------ */
+
+.overlay-container {
+  position: fixed;
+  top: 0;
+  z-index: 2;
+
+  width: 100%;
+  height: 100%;
+
+  background: rgba(0, 0, 0, 0.5);
+
+  opacity: 0;
+  visibility: hidden;
+}
+
+.overlay-container.active {
+  opacity: 1;
+  visibility: visible;
+}
+
+.modal {
+  width: 100%;
+  height: 100%;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.modal-content {
+  width: 40%;
+
+  border-radius: 0.25rem;
+  
+  box-shadow: 2px 4px 10px rgb(0, 0, 0, 0.5);
+
+  background: whitesmoke;
+}
+
+.form h1 {
+  font-weight: 350;
+  text-align: center;
+
+  color: var(--text-default-color);
+
+  margin: 0.75rem 0;
+}
+
+.form-content {
+  padding: 0.9rem;
+}
+
+.form-content-field {
+  width: 100%;
+
+  margin-bottom: 0.8rem;
+}
+
+.form-content-field input {
+  width: 100%;
+
+  padding: 0.65rem 0.5rem;
+
+  border-radius: 0.35rem;
+  border: none;
+
+  background: white;
+}
+
+.form-content-field + small {
+  color: var(--text-default-color);
+  opacity: 0.65;
+}
+
+.form-buttons-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  gap: 1rem;
+}
+
+.form-buttons-container button {
+  width: 50%;
+
+  opacity: 0.75;
+  transition: opacity 0.8s;
+
+  border-radius: 0.25rem;
+
+  padding: 1.2rem;
+}
+
+/* Cancelar */
+.form-buttons-container button:first-of-type {
+  border: 0.2rem solid red;
+  background: transparent;
+  color: red;
+
+  opacity: 0.5;
+}
+
+/* Salvar */
+.form-buttons-container button:last-of-type {
+  border: 0.2rem solid green;
+  background: green;
+  color: white;
+}
+
+.form-buttons-container button:hover {
+  opacity: 1;
+  transition: opacity 0.8s;
+
+  cursor: pointer;
+}
+
+/* ------------ Footer ------------ */
+
+footer {
+  position: static;
+  left: 0;
+  bottom: 0;
+
+  margin-top: 0.5rem;
+
+  width: 100%;
+
+  text-align: center;
+  font-size: 1rem;
+
+  color: var(--text-default-color);
+
+  padding: 1rem;
+}
+
+/* ------------ Responsivo ------------ */
+
+@media screen and (min-width: 800px) {
+  html {
+    font-size: 87.5%;
+  }
+
+  .block-container:first-of-type {
+    display: grid;
+    /*grid-template-columns: 1fr 1fr 1fr;*/
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem;
+  }
+}
